@@ -105,11 +105,14 @@ while epochs < 15:
 h = params * samples
 h = h.sum(axis = 1)
 
+# Graficamos el error y tambien nuesto modelo de regresión contra los datos reales.
+plt.figure()
 plt.plot(__errors__, color = 'b')
 plt.xlabel('Epochs')
 plt.ylabel('Error')
-plt.show()
+plt.title('Error')
 
+plt.figure()
 plt.scatter(samples_g, y, marker='o', linestyle='-', color='b')
 plt.scatter(samples_g, h, marker='o', linestyle='-', color='r')
 plt.xlabel('Years Experience')
